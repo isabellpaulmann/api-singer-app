@@ -9,11 +9,37 @@ function harryData (data) {
     const list = document.createElement('ul')
     list.setAttribute('role','list')
     document.body.append(list)
+
+
     harryStaffs.forEach (harryStaff  => {
         const listItem = document.createElement('li')
         listItem.className = 'card'
-        listItem.innerHTML = `${data[0].name}`
-        list.append(listItem)
+        listItem.innerHTML = `${harryStaff.name}`;
+    const staffDetails = document.createElement('dl');
+    staffDetails.className = 'details';
+    staffDetails.innerHTML = `
+      <dt>Species</dt>
+      <dd>${harryStaff.species}</dd>
+      <dt>Gender</dt>
+      <dd>${harryStaff.gender}</dd>
+      <dt>House</dt>
+      <dd>${harryStaff.house}</dd>
+      <dt>Patronus</dt>
+      <dd>${harryStaff.patronus}</dd>
+      <img src="${harryStaff.image}" alt="">
+      `;
+      
+    listItem.append(staffDetails);
+    staffDetails.classList.add('hide');
+    list.append(listItem)
+
+    listItem.addEventListener('click', () => {
+        staffDetails.classList.toggle('show');
+        console.log("hallo")
+      })
     })
 
+    
+      
+    
 }
