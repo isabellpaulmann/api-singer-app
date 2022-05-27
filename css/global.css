@@ -6,3 +6,13 @@ body {
   font-family: sans-serif;
   margin: 0;
 }
+
+.hide{
+  display: none;
+}
+.show{
+  display: flex;
+}
+.card{
+  list-style: none;
+}
