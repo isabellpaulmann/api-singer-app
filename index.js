@@ -1,45 +1,38 @@
-fetch ('http://hp-api.herokuapp.com/api/characters/staff').then 
+fetch ('https://rickandmortyapi.com/api/character').then 
 (response =>
 response.json()).then 
-(harryData).catch (error => {error.message})
-console.clear()
-function harryData (data) {
-    console.log(data[0].name)
-    const harryStaffs = data
+(rmData).catch (error => {error.message})
+
+function rmData (data) {
+    console.log(data)
+    const rmCharacters = data.results
     const list = document.createElement('ul')
     list.setAttribute('role','list')
     document.body.append(list)
 
 
-    harryStaffs.forEach (harryStaff  => {
+    rmCharacters.forEach (rmCharacter  => {
         const listItem = document.createElement('li')
         listItem.className = 'card'
-        listItem.innerHTML = `${harryStaff.name}`;
-    const staffDetails = document.createElement('dl');
-    staffDetails.className = 'details';
-    staffDetails.innerHTML = `
-      <dt>Species</dt>
-      <dd>${harryStaff.species}</dd>
-      <dt>Gender</dt>
-      <dd>${harryStaff.gender}</dd>
-      <dt>House</dt>
-      <dd>${harryStaff.house}</dd>
-      <dt>Patronus</dt>
-      <dd>${harryStaff.patronus}</dd>
-      <img src="${harryStaff.image}" alt="">
-      `;
-      
-    listItem.append(staffDetails);
-    staffDetails.classList.add('hide');
+        listItem.innerHTML = `${rmCharacter.name}`;
+    const characterDetails = document.createElement('dl');
+    characterDetails.className = 'details';
+    characterDetails.innerHTML = `
+    <img src="${rmCharacter.image}" alt="${rmCharacter.name}" height= "auto" width= "130px">
+    <dt>Species: ${rmCharacter.species}</dt>
+          <dt>Gender: ${rmCharacter.gender}</dt>
+           <dt>Status: ${rmCharacter.status}</dt>
+           <dt>Origin: ${rmCharacter.origin.name}</dt>
+                 `;
+                 
+
+    listItem.append(characterDetails);
+    characterDetails.classList.add('hide');
     list.append(listItem)
 
+    console.log('HAllo');
     listItem.addEventListener('click', () => {
-        staffDetails.classList.toggle('show');
-        console.log("hallo")
-      })
-    })
-
-    
-      
-    
+        characterDetails.classList.toggle('show');
+              })
+    })  
 }

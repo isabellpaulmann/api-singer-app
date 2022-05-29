@@ -1,18 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@500&family=Alice&family=Berkshire+Swash&family=Fredericka+the+Great&family=Karla:wght@300&family=Magra:wght@400;700&family=Tapestry&display=swap');
 * {
   box-sizing: border-box;
 }
 
-body {
-  font-family: sans-serif;
-  margin: 0;
+h1 {
+  background-color: #24325fff;
+  margin-top:0;
+  padding: 20px;
+  font-family: 'Alice', serif;
+  text-align: center;
+  box-shadow: 10px 10px 86px #000000;
+  margin: 30px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+  color: #e7e0db;
+  box-shadow: 2px 2px 5px 10px #24325fff;
+  
 }
 
+body {
+   margin: 0;
+  background-color:#111;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+  
 .hide{
   display: none;
 }
+
 .show{
   display: flex;
-}
-.card{
-  list-style: none;
 }
