@@ -1,20 +1,14 @@
 @import './global.css';
-
-  .hide{
-    display: none;
-  }
-  
-  .show{
-    display: flex;
-  }
   
   .card{
     list-style: none;
     }
   
-  img {border-radius: 20px;
+  img 
+  {border-radius: 20px;
     align-self: center;
     box-shadow: 0px 0px 15px #000000;
+    margin-top: 30px;
   }
   
   ul {
@@ -40,6 +34,12 @@
     flex-direction: column;
     font-size: 0.99rem;
     
+    
+  }
+
+  dd{
+  padding-left: .5rem;
+    margin: 0;
   }
 
   li {
@@ -56,3 +56,13 @@
     border-radius: 10px;
     }
    
+  .details__item{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: baseline;
+  }
+
+  .error{
+    color: white;
+  }
