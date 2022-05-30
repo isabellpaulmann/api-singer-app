@@ -1,4 +1,4 @@
-fetch ('https://rickandmortyap.com/api/character')
+fetch ('https://rickandmortyapi.com/api/character')
     .then (response => response.json())
     .then(createData)
     .catch (onError)
